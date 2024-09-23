@@ -1,4 +1,4 @@
-package com.exemple.Hospital.service;
+package com.exemple.Hospital.serviceimpl;
 
 import com.exemple.Hospital.entity.MedicalInformation;
 import com.exemple.Hospital.repository.MedicalInformationRepository;
@@ -15,5 +15,8 @@ public class MedicalInformationService {
     }
     public List<MedicalInformation> getMedicalInformation(){
         return medicalInformationRepository.findAll();
+    }
+    public MedicalInformation addMedicalInformation(MedicalInformation medicalInformation){
+        return medicalInformationRepository.save(medicalInformation);
     }
 }

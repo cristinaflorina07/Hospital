@@ -7,6 +7,8 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 
@@ -21,6 +23,8 @@ public class Appointment {
     private String doctor;
     private int room;
     private boolean available;
+    private LocalDateTime registerHour;
+
 
 
 
