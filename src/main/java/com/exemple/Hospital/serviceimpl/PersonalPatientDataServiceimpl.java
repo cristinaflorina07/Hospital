@@ -17,19 +17,20 @@ public class PersonalPatientDataServiceimpl implements PersonalPatientDataServic
         this.personalPatientDataRepository = personalPatientDataRepository;
     }
 
-    @Override
+
     public List<PersonalPatientData> getAllPersonalPatientData() {
         return personalPatientDataRepository.findAll();
     }
 
-    @Override
+
     public PersonalPatientData addPersonalPatientData(PersonalPatientData personalPatientData) {
         return personalPatientDataRepository.save(personalPatientData);
     }
 
-    @Override
+
     public Optional<PersonalPatientData> getPersonalPatientDataById(Long id) {
-        return Optional.empty();
+
+        return personalPatientDataRepository.findById(id);
     }
 }
 
