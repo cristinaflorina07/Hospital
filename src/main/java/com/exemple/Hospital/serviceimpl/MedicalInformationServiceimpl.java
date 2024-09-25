@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class MedicalInformationService implements MedicalInformationServiceapi {
+public class MedicalInformationServiceimpl implements MedicalInformationServiceapi {
     private final MedicalInformationRepository medicalInformationRepository;
 
-    public MedicalInformationService(MedicalInformationRepository medicalInformationRepository) {
+    public MedicalInformationServiceimpl(MedicalInformationRepository medicalInformationRepository) {
         this.medicalInformationRepository = medicalInformationRepository;
     }
     public List<MedicalInformation> getMedicalInformation(){

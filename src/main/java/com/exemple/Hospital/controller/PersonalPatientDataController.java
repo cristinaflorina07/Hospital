@@ -6,6 +6,7 @@ import com.exemple.Hospital.serviceimpl.PersonalPatientDataServiceimpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/patient")
@@ -17,10 +18,18 @@ public class PersonalPatientDataController {
     }
 
     @GetMapping("/get")
-    public List<PersonalPatientData> getAllPersonalPatientData(){
+    public List<PersonalPatientData> getAllPersonalPatientData() {
         return personalPatientDataServiceapi.getAllPersonalPatientData();
     }
+
     @PostMapping("/AddPersonalPatientData")
     public PersonalPatientData addPersonalPatientData(@RequestBody PersonalPatientData personalPatientData) {
         return personalPatientDataServiceapi.addPersonalPatientData(personalPatientData);
-}}
+
+    }
+    @GetMapping("/findById/{id}")
+    public Optional<PersonalPatientData> getMedicalPatientDataById(@PathVariable Long id){
+        return personalPatientDataServiceapi.getPersonalPatientDataById(id);
+    }
+
+}

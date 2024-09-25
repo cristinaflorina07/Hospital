@@ -1,22 +1,26 @@
 package com.exemple.Hospital.controller;
 
 import com.exemple.Hospital.entity.Appointment;
-import com.exemple.Hospital.serviceimpl.AppointmentService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.exemple.Hospital.serviceapi.AppointmentServiceapi;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/Appointment")
 public class AppointmentController {
-    private final AppointmentService appointmentService;
+    private final AppointmentServiceapi appointmentServiceapi;
 
-    public AppointmentController(AppointmentService appointmentService) {
-        this.appointmentService = appointmentService;
+    public AppointmentController(AppointmentServiceapi appointmentServiceapi) {
+        this.appointmentServiceapi = appointmentServiceapi;
     }
+
     @PostMapping("/addAppointment")
-    public Appointment addAppointment(@RequestBody Appointment appointment){
-        return appointmentService.addAppointment(appointment);
+    public Appointment addAppointment(@RequestBody Appointment appointment) {
+        return appointmentServiceapi.addApointment(appointment);
+    }
+    @GetMapping("/getAppointment")
+    public List<Appointment> getAllAppointment(){
+        return appointmentServiceapi.getAllApointment();
     }
 }

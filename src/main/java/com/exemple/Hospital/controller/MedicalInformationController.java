@@ -1,22 +1,32 @@
 package com.exemple.Hospital.controller;
 
 import com.exemple.Hospital.entity.MedicalInformation;
-import com.exemple.Hospital.serviceimpl.MedicalInformationService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.exemple.Hospital.serviceapi.MedicalInformationServiceapi;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/Appointment")
+@RequestMapping("/MedicalInformation")
 public class MedicalInformationController {
-    public final MedicalInformationService medicalInformationService;
+    public final MedicalInformationServiceapi medicalInformationServiceapi;
 
-    public MedicalInformationController(MedicalInformationService medicalInformationService) {
-        this.medicalInformationService = medicalInformationService;
+    public MedicalInformationController(MedicalInformationServiceapi medicalInformationServiceapi) {
+        this.medicalInformationServiceapi = medicalInformationServiceapi;
     }
+
     @PostMapping("/addMedicalInformation")
     public MedicalInformation addMedicalInformation(@RequestBody MedicalInformation medicalInformation){
-        return medicalInformationService.addMedicalInformation(medicalInformation);
+        return medicalInformationServiceapi.addMedicalInformation(medicalInformation);
     }
+    @GetMapping("/getMedicalInformation")
+    public List<MedicalInformation> getAllApoinment(){
+        return medicalInformationServiceapi.getAllMedicalInformation();
+    }
+    @GetMapping("/findById/{id}")
+    public Optional<MedicalInformation> getMedivalInformationById(@PathVariable Long id){
+        return medicalInformationServiceapi.getMedicalInformationById(id);
+    }
+
 }
