@@ -4,9 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -18,13 +20,13 @@ public class PersonalPatientData {
     private Long id;
     private String firstName;
     private String secondName;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
     private int age;
     private String gender;
-    private int nationalIdentificationNumber;
+    private String nationalIdentificationNumber;
     private String homeAddress;
-    private int phoneNumber;
-
-
+    private String phoneNumber;
+    @Size(min = 13, max = 13, message = "CNP must be exactly 13 characters long")
+    private String cnp;
 
 }
