@@ -16,19 +16,22 @@ public class ValidatorCNP implements ConstraintValidator<Validation.ValidCNP, St
         if (!cnp.matches("\\d+")) {
             return false;
         }
-        // Verificarea primei cifre din CNP în funcție de sex
-        char firstDigit = cnp.charAt(0);
-        if (personalPatientData.getGender().equalsIgnoreCase("M")) {
-            if (firstDigit != '1' && firstDigit != '5' && firstDigit != '3' && firstDigit != '7') {
-                return false; // CNP invalid pentru bărbați
-            }
-        } else if (personalPatientData.getGender().equalsIgnoreCase("F")) {
-            if (firstDigit != '2' && firstDigit != '6' && firstDigit != '4' && firstDigit != '8') {
-                return false; // CNP invalid pentru femei
-            }
-        } else {
-            return false; // Sexul nu este "M" sau "F"
-        }
+//        // Verificarea primei cifre din CNP în funcție de sex
+//        char firstDigit = cnp.charAt(0);
+//        String gender = personalPatientData.getGender();
+//
+//            if ("M".equalsIgnoreCase(gender)) {
+//                if (firstDigit != '1' && firstDigit != '5' && firstDigit != '3' && firstDigit != '7') {
+//                    return false; // Invalid CNP for males
+//                }
+//            } else if ("F".equalsIgnoreCase(gender)) {
+//                if (firstDigit != '2' && firstDigit != '6' && firstDigit != '4' && firstDigit != '8') {
+//                    return false; // Invalid CNP for females
+//                }
+//            } else {
+//                return false; // Gender is neither "M" nor "F"
+//            }
+
         return true;
 
 //        // Logica pentru verificarea cifrei de control, similară cu exemplul anterior

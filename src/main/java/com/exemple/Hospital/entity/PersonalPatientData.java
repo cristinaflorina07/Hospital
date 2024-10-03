@@ -26,7 +26,7 @@ public class PersonalPatientData {
     private String gender;
     private String nationalIdentificationNumber;
     private String homeAddress;
-  @Size(min = 10, max = 10, message = "phoneNumber must be exactly 10")
+    @Size(min = 10, max = 10, message = "phoneNumber must be exactly 10")
     private String phoneNumber;
     @Validation.ValidCNP
     private String cnp;
