@@ -1,5 +1,6 @@
 package com.exemple.Hospital.entity;
 
+import com.exemple.Hospital.utils.Validation;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,8 +26,9 @@ public class PersonalPatientData {
     private String gender;
     private String nationalIdentificationNumber;
     private String homeAddress;
+  @Size(min = 10, max = 10, message = "phoneNumber must be exactly 10")
     private String phoneNumber;
-    @Size(min = 13, max = 13, message = "CNP must be exactly 13 characters long")
+    @Validation.ValidCNP
     private String cnp;
 
 }
