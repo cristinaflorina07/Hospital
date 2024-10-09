@@ -1,15 +1,15 @@
-package com.exemple.Hospital.serviceimpl;
+package com.exemple.hospital.serviceimpl;
 
-import com.exemple.Hospital.entity.MedicalInformation;
-import com.exemple.Hospital.repository.MedicalInformationRepository;
-import com.exemple.Hospital.serviceapi.MedicalInformationServiceapi;
+import com.exemple.hospital.entity.MedicalInformation;
+import com.exemple.hospital.repository.MedicalInformationRepository;
+import com.exemple.hospital.serviceapi.MedicalInformationServiceAPI;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class MedicalInformationServiceimpl implements MedicalInformationServiceapi {
+public class MedicalInformationServiceimpl implements MedicalInformationServiceAPI {
     private final MedicalInformationRepository medicalInformationRepository;
 
     public MedicalInformationServiceimpl(MedicalInformationRepository medicalInformationRepository) {

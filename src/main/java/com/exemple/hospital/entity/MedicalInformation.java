@@ -1,11 +1,10 @@
-package com.exemple.Hospital.entity;
+package com.exemple.hospital.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -17,6 +16,7 @@ public class MedicalInformation {
     private String medicalInformation;
     private String currentTreatment;
     private String chronicCondition;
-    private String knowsAllergies;
+    @ElementCollection
+    private List<String> knowsAllergies;
     private String vaccinations;
 }

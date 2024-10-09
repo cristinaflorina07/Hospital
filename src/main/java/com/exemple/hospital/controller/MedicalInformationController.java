@@ -1,7 +1,7 @@
-package com.exemple.Hospital.controller;
+package com.exemple.hospital.controller;
 
-import com.exemple.Hospital.entity.MedicalInformation;
-import com.exemple.Hospital.serviceapi.MedicalInformationServiceapi;
+import com.exemple.hospital.entity.MedicalInformation;
+import com.exemple.hospital.serviceapi.MedicalInformationServiceAPI;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,9 +10,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/MedicalInformation")
 public class MedicalInformationController {
-    public final MedicalInformationServiceapi medicalInformationServiceapi;
+    public final MedicalInformationServiceAPI medicalInformationServiceapi;
 
-    public MedicalInformationController(MedicalInformationServiceapi medicalInformationServiceapi) {
+    public MedicalInformationController(MedicalInformationServiceAPI medicalInformationServiceapi) {
         this.medicalInformationServiceapi = medicalInformationServiceapi;
     }
 
@@ -25,7 +25,7 @@ public class MedicalInformationController {
         return medicalInformationServiceapi.getAllMedicalInformation();
     }
     @GetMapping("/findById/{id}")
-    public Optional<MedicalInformation> getMedivalInformationById(@PathVariable Long id){
+    public Optional<MedicalInformation> getMedicalInformationById(@PathVariable Long id){
         return medicalInformationServiceapi.getMedicalInformationById(id);
     }
 

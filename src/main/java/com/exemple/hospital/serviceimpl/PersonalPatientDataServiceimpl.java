@@ -1,8 +1,8 @@
-package com.exemple.Hospital.serviceimpl;
+package com.exemple.hospital.serviceimpl;
 
-import com.exemple.Hospital.entity.PersonalPatientData;
-import com.exemple.Hospital.repository.PersonalPatientDataRepository;
-import com.exemple.Hospital.serviceapi.PersonalPatientDataServiceapi;
+import com.exemple.hospital.entity.PersonalPatientData;
+import com.exemple.hospital.repository.PersonalPatientDataRepository;
+import com.exemple.hospital.serviceapi.PersonalPatientDataServiceAPI;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Service
 
-public class PersonalPatientDataServiceimpl implements PersonalPatientDataServiceapi {
+public class PersonalPatientDataServiceimpl implements PersonalPatientDataServiceAPI {
     private final PersonalPatientDataRepository personalPatientDataRepository;
 
     public PersonalPatientDataServiceimpl(PersonalPatientDataRepository personalPatientDataRepository) {

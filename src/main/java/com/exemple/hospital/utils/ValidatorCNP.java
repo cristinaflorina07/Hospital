@@ -1,6 +1,5 @@
-package com.exemple.Hospital.utils;
-import com.exemple.Hospital.entity.PersonalPatientData;
-import com.exemple.Hospital.utils.Validation;
+package com.exemple.hospital.utils;
+import com.exemple.hospital.entity.PersonalPatientData;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 

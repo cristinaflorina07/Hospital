@@ -1,4 +1,4 @@
-package com.exemple.Hospital.utils;
+package com.exemple.hospital.utils;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;

@@ -1,6 +1,6 @@
-package com.exemple.Hospital.entity;
+package com.exemple.hospital.entity;
 
-import com.exemple.Hospital.utils.Validation;
+import com.exemple.hospital.utils.Validation;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,7 +10,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Getter
@@ -26,7 +25,7 @@ public class PersonalPatientData {
     private String gender;
     private String nationalIdentificationNumber;
     private String homeAddress;
-    @Size(min = 10, max = 10, message = "phoneNumber must be exactly 10")
+    @Size(min = 10, max = 10, message = "Phone number must be exactly 10")
     private String phoneNumber;
     @Validation.ValidCNP
     private String cnp;
