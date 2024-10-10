@@ -1,7 +1,7 @@
 package com.exemple.hospital.controller;
 
 import com.exemple.hospital.entity.MedicalInformation;
-import com.exemple.hospital.serviceapi.MedicalInformationServiceAPI;
+import com.exemple.hospital.serviceAPI.MedicalInformationServiceAPI;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

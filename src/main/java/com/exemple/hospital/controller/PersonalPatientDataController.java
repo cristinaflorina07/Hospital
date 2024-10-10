@@ -1,8 +1,8 @@
 package com.exemple.hospital.controller;
 
 import com.exemple.hospital.entity.PersonalPatientData;
-import com.exemple.hospital.serviceapi.PersonalPatientDataServiceAPI;
-import com.exemple.hospital.serviceimpl.PersonalPatientDataServiceimpl;
+import com.exemple.hospital.serviceAPI.PersonalPatientDataServiceAPI;
+import com.exemple.hospital.serviceImpl.PersonalPatientDataServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +15,7 @@ import java.util.Optional;
 public class PersonalPatientDataController {
     private final PersonalPatientDataServiceAPI personalPatientDataServiceapi;
 
-    public PersonalPatientDataController(PersonalPatientDataServiceimpl personalPatientDataServiceimpl) {
+    public PersonalPatientDataController(PersonalPatientDataServiceImpl personalPatientDataServiceimpl) {
         this.personalPatientDataServiceapi = personalPatientDataServiceimpl;
     }
 

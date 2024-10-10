@@ -1,7 +1,7 @@
 package com.exemple.hospital.controller;
 
 import com.exemple.hospital.entity.Appointment;
-import com.exemple.hospital.serviceapi.AppointmentServiceAPI;
+import com.exemple.hospital.serviceAPI.AppointmentServiceAPI;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

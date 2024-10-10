@@ -1,4 +1,4 @@
-package com.exemple.hospital.serviceapi;
+package com.exemple.hospital.serviceAPI;
 
 import com.exemple.hospital.entity.Appointment;
 
