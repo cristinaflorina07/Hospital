@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/MedicalInformation")
+@RequestMapping("/medical-information")
 public class MedicalInformationController {
     public final MedicalInformationServiceAPI medicalInformationServiceAPI;
 
@@ -16,12 +16,12 @@ public class MedicalInformationController {
         this.medicalInformationServiceAPI = medicalInformationServiceAPI;
     }
 
-    @PostMapping("/addMedicalInformation")
+    @PostMapping("/add")
     public MedicalInformation addMedicalInformation(@RequestBody MedicalInformation medicalInformation){
         return medicalInformationServiceAPI.addMedicalInformation(medicalInformation);
     }
-    @GetMapping("/getMedicalInformation")
-    public List<MedicalInformation> getAllApoinment(){
+    @GetMapping("/get")
+    public List<MedicalInformation> getAllMedicalInformation(){
         return medicalInformationServiceAPI.getAllMedicalInformation();
     }
     @GetMapping("/findById/{id}")

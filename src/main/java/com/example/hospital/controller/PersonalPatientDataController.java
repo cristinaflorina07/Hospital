@@ -19,12 +19,12 @@ public class PersonalPatientDataController {
         this.personalPatientDataServiceAPI = personalPatientDataServiceimpl;
     }
 
-    @GetMapping("/getAllPatient")
+    @GetMapping("/get")
     public List<PersonalPatientData> getAllPersonalPatientData() {
         return personalPatientDataServiceAPI.getAllPersonalPatientData();
     }
 
-    @PostMapping("/AddPersonalPatientData")
+    @PostMapping("/add")
     public PersonalPatientData addPersonalPatientData(@Valid @RequestBody PersonalPatientData personalPatientData) {
         return personalPatientDataServiceAPI.addPersonalPatientData(personalPatientData);
 

@@ -17,11 +17,11 @@ public class DoctorController {
         this.doctorServiceAPI = doctorServiceAPI;
     }
 
-    @PostMapping("/addDoctor")
+    @PostMapping("/add")
     public Doctor addDoctor(@RequestBody Doctor doctor){
         return doctorServiceAPI.addDoctor(doctor);
     }
-    @GetMapping("/getAllDoctor")
+    @GetMapping("/get")
     public List<Doctor> getAllDoctor(){
         return doctorServiceAPI.getAllDoctor();
     }

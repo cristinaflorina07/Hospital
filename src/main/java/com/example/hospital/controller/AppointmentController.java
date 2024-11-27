@@ -16,12 +16,12 @@ public class AppointmentController {
         this.appointmentServiceapi = appointmentServiceapi;
     }
 
-    @PostMapping("/addAppointment")
+    @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     public Appointment addAppointment(@RequestBody Appointment appointment) {
         return appointmentServiceapi.addAppointment(appointment);
     }
-    @GetMapping("/getAppointment")
+    @GetMapping("/get")
     public List<Appointment> getAllAppointment(){
         return appointmentServiceapi.getAllAppointment();
     }
