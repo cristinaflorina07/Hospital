@@ -7,8 +7,11 @@ import java.util.List;
 import java.util.Optional;
 
 public interface AppointmentServiceAPI {
-    Appointment saveAppointment(Long doctorId, LocalDateTime registerHour);
+    Appointment createAppointment(Appointment appointment);
+
     List<Appointment> getAllAppointment();
+
     Appointment addAppointment(Appointment appointment);
+
     Optional<Appointment> getAppointmentById(Long id);
 }

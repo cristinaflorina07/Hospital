@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 
@@ -17,11 +18,12 @@ public class Appointment {
     private String section;
     private int room;
     private boolean available;
-    private LocalDateTime registerHour;
+    private LocalDateTime appointmentStart;
+    private LocalDateTime appointmentEnd;
+
     @ManyToOne
     @JoinColumn(name = "doctor_id", nullable = false)
     private Doctor doctor;
-
 
 
 }

@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -23,7 +24,16 @@ public class Doctor {
     @Column(length = 10)
     private String phoneNumber;
     @ElementCollection
-    private List<LocalDate> timeOff;
-//    @ElementCollection
-//    private List<LocalDateTime> anotherAppointment;
+    @CollectionTable(name = "doctor_time_off", joinColumns = @JoinColumn(name = "doctor_id"))
+    @AttributeOverrides({
+            @AttributeOverride(name = "start", column = @Column(name = "time_off_start")),
+            @AttributeOverride(name = "end", column = @Column(name = "time_off_end"))
+    })
+    private List<TimeInterval> timeOff = new ArrayList<>();
+
+    @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Appointment> appointments;
+
+
 }
+
