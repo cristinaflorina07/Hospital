@@ -23,6 +23,27 @@ public class AppointmentController {
     public ResponseEntity<Appointment> createAppointment(@RequestBody Appointment appointment) {
         return ResponseEntity.ok(appointmentServiceapi.createAppointment(appointment));
     }
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<String> handleRuntimeException(RuntimeException ex) {
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(ex.getMessage()); // Pentru excepția "Doctor not found"
+    }
+
+    @ExceptionHandler(IllegalStateException.class)
+    public ResponseEntity<String> handleIllegalStateException(IllegalStateException ex) {
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(ex.getMessage()); // Pentru celelalte excepții
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleGeneralException(Exception ex) {
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body("An unexpected error occurred: " + ex.getMessage());
+
+    }
 
 
 
